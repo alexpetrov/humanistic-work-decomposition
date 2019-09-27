@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title></title>
+<meta name="author" content="(alexpetrov)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/css/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/css/theme/moon.css" id="theme"/>
+
+<link rel="stylesheet" href="./local.css"/>
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = './reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<meta name="description" content="Гуманистическая декомпозиция работы">
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">Факты Про Datomic
+</section>
+
+<section>
+<section id="slide-org1a461aa">
+<h2 id="org1a461aa">Гуманистическая декомпозиция работы</h2>
+<p>
+<a href="https://twitter.com/alexpetrov_rb">@alexpetrov_rb</a>
+</p>
+
+<p>
+26 Сентября 2019
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgcff1546">
+<h2 id="orgcff1546">About me</h2>
+<p class="fragment roll-in">
+<b>Alexander Petrov</b> (a.k.a Lysenko) <a href="https://twitter.com/alexpetrov_rb" class="fragment roll-in">@alexpetrov_rb</a>
+</p>
+
+<p class="fragment roll-in">
+<b>Since 2015</b>
+Senior <b>Ruby</b> / <b>Rails</b> / <b>Erlang</b> Developer at <a href="http://fun-box.ru/" class="fragment roll-in">FunBox</a>
+</p>
+
+<p class="fragment roll-in">
+<b>2006 - 2014</b> Enterprise <b>Java</b> Developer / Trainer / Architect / Team Leader
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org8ca2426">
+<h3 id="org8ca2426">Свойства гуманистической декомпозиции 1</h3>
+<ul class="fragment roll-in">
+<li>Задача должна быть самодостаточной и целостной. Созадавая решение задачи в голове, не должно быть частей в других задачах, которые могли бы ключевым образом повлиять на решение.</li>
+
+</ul>
+
+<ul class="fragment roll-in">
+<li>Задача не должна превышать 3-5 дней, чтобы иметь обозримый, сильно сцепленный скоуп и быть управляемой.</li>
+
+</ul>
+
+<aside class="notes">
+<p>
+Разделяя доработку на подзадачи нужно следить за следующими свойствами задач:
+</p>
+
+<ul>
+<li>Задача должна быть самодостаточной и целостной. Созадавая решение задачи в голове, не должно быть частей в других задачах, которые могли бы ключевым образом повлиять на решение.</li>
+<li>Задача не должна превышать 3-4 дней, чтобы иметь обозримый, сильно сцепленный скоуп и быть управляемой.</li>
+
+</ul>
+
+<p>
+С точки зрения архитектуры эти два правила соотносятся с принципом Loose Coupling / High Cohesion.
+Loose Coupling: зависимости между задачами должны быть минимальными.
+High Cohesion: сами задачи должны содержать сильно сцепленные наборы функциональности. То есть чтобы ничего нельзя было выбросить без риска потерять целостность размышлений о задаче.
+</p>
+
+</aside>
+
+</section>
+</section>
+<section>
+<section id="slide-org1d33ccd">
+<h3 id="org1d33ccd">Свойства гуманистической декомпозиции 2</h3>
+<p class="fragment roll-in">
+Loose Coupling / High Cohesion
+</p>
+
+<p class="fragment roll-in">
+Loose Coupling: зависимости между задачами должны быть минимальными.
+</p>
+
+<p class="fragment roll-in">
+High Cohesion: сами задачи должны содержать сильно сцепленные наборы функциональности. Ничего нельзя выбросить без риска потерять целостность размышлений о задаче.
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgba4ebf2">
+<h3 id="orgba4ebf2">Верификация декомпозиции 1</h3>
+<p>
+Контольные вопросы к каждой задаче:
+</p>
+
+<ul class="fragment roll-in">
+<li>Можно ли о задаче думать целостно в изоляции от других задач?</li>
+
+</ul>
+
+<ul class="fragment roll-in">
+<li>Можно ли вынести из задачи что-то лишнее, так чтобы при этом не рарушилась целостность?</li>
+
+</ul>
+
+<ul class="fragment roll-in">
+<li>Не является ли задача слишком маленькой, не является ли она частью какой-то большей задачи, чтобы та была целостной?</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org06be574">
+<h3 id="org06be574">Верификация декомпозиции 2</h3>
+<p>
+Контрольные вопросы к декомпозиции в целом:
+</p>
+
+<ul class="fragment roll-in">
+<li>Нет ли между задачами слишком сильных зависимостей или неявных зависимостей, в особенности если они даются разным исполнителям?</li>
+
+</ul>
+
+<ul class="fragment roll-in">
+<li>Являются ли все задачи управляемыми по побъему (не превышают 3 - 5 дней)?</li>
+
+</ul>
+
+<ul class="fragment roll-in">
+<li>Не слишком ли мелко разбиты задачи и не нарушена ли их целостность?</li>
+
+</ul>
+
+<aside class="notes">
+<p>
+Типичные примеры нарушения принципа целостности задачи:
+</p>
+<ul>
+<li>Разделение задач по созданию или изменению модели и задач в которых реализуеются части, которые этой моделью пользуются, будь то пользовательский интерфейс или бизнес логика.</li>
+
+</ul>
+<p>
+Очень часто проектирование модели зависит от того, как эта модель будет использоваться, и какие ограничения на неё накладываются технологией реализации UI или принятой практикой в проекте.
+В процессе работы одновременно над моделью и над использующим её кодом, постоянно происходят небольшие озарения, приводящие к более выгодному и лаконичному дизайну.
+</p>
+
+<ul>
+<li>Разделение задач внутри границ единого неделимого алгоритма</li>
+
+</ul>
+<p>
+Если заранее слишком мелко поделить задачи, то есть риск, что части единого алгоритма окажутся в разных задачах и общая картина будет утеряна исполнителями.
+В результате будет рабочими в лучшем случае 10 - 30% кейсов. Но  у разработчиков будет уверенность что они всё сделали всё правильно и оно даже работает.
+</p>
+
+</aside>
+
+</section>
+</section>
+<section>
+<section id="slide-org61baa4f">
+<h2 id="org61baa4f">Стратегии декомпозиции</h2>
+<p>
+Для получения декомпозиций удовлетворяющих описанным критериям могут помочь следующие стратегии
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orge97babe">
+<h3 id="orge97babe">Выделение смыслового ядра 1</h3>
+<p class="fragment roll-in">
+Выбрать основного исполнителя под смысловое ядро фичи.
+</p>
+
+<p class="fragment roll-in">
+Делегировать второстепенные детали другому члену команды, чтобы разгрузить от них мозг основгого исполнителя.
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org2978bc4">
+<h3 id="org2978bc4">Выделение смыслового ядра 2</h3>
+<p class="fragment roll-in">
+Важно обеспечить минимальную зависимость (связность) между работами этих двух разработчиков.
+</p>
+
+<ul class="fragment roll-in">
+<li>Зависимость, через наличие поля или группы полей в модели - хорошая, ибо поля модели имеют более стабильную природу.</li>
+
+</ul>
+
+<ul class="fragment roll-in">
+<li>Зависимость от API какого-то сервисного объекта уже менее хороша для разделения. Она может служить признаком ошибки декомпозиции.</li>
+
+</ul>
+
+<aside class="notes">
+<p>
+Необходимость заранее выдумывать интерфейс и потом быть сковываемым необходимостью его поддерживать демотивирует и снижает продуктивность. Если при проведении границы допускается ошибка и граница оказывается внутри смыслового ядра, то это оборачивается некорректно реализованным алгоритмом, из-за того, что у исполнителей не было целостной картины и они делали свои части и не могли увидеть потенциальных проблем до их нахождения ручными тестировщиками.
+</p>
+
+</aside>
+
+</section>
+</section>
+<section>
+<section id="slide-org491e962">
+<h3 id="org491e962">Выделение смыслового ядра 3</h3>
+<p>
+По Фреду Бруксу, это напоминает метафору работы команды как хирурга и его ассистентов.
+</p>
+
+<p>
+Причем "хирургом" можно иногда назначать не самого старшего разработчика в команде, а самого младшего (оказывая ему поддержку), чтобы он учился и чувствовал драйв.
+</p>
+
+<aside class="notes">
+<p>
+Может показаться, что это будет неэффективно, но кумулятивный эффект от такой работы и её благодатность для всех участников будет перекрывать кажущуюся краткосрочную неэффективность.
+Развитие людей - самая большая ценность!
+</p>
+
+</aside>
+
+</section>
+</section>
+<section>
+<section id="slide-org0d003ec">
+<h3 id="org0d003ec">Выделение прототипа 1</h3>
+<p>
+Если после выделения смыслового ядра, оно остаётся достаточно большим и неуправляемым по трудозатратам, но не очевидно как разделить его на подзадачи управляемого размера, можно выделить несколько дней на прототипирование, и остальное время оставить на реализацию продуктовой версии фичи.
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org79d7d5a">
+<h3 id="org79d7d5a">Выделение прототипа 2</h3>
+<p>
+После прототипирования может возникнуть идея разделения на подзадачи основной работы.
+И даже может возникнуть понимание, какие части к ядру не относятся и их можно делегировать.
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org9c959f5">
+<h3 id="org9c959f5">Отказ от детального проектирования на этапе декомпозиции</h3>
+<p>
+Велик риск ошибки детального проектирования во время декомпозиции.
+</p>
+
+<p class="fragment roll-in">
+Детальному проектированию место при непосредственной работе над фичей или прототипировании.
+</p>
+
+<aside class="notes">
+<p>
+На этапе декомпозиции нужно стараться избегать преждевременного проектирования и оставлять его на этап непосредственной работы над фичей, или на этап прототипирования.
+Иначе есть большой риск выбрать ошибочное решение и парализовать исполнителей в возможности его вовремя распознать и исправить.
+</p>
+
+</aside>
+
+</section>
+</section>
+<section>
+<section id="slide-org597e60c">
+<h3 id="org597e60c">Откладывание декомпозиции более поздних этапов работ до окончания ранних этапов работ</h3>
+<p>
+Очень большие бизнес фичи стоит декомпозировать поэтапно по мере готовности предыдущих этапов работ.
+</p>
+
+<aside class="notes">
+<p>
+Когда есть большой Epic из множества историй связанных но относительно независимых историй, то не стоит обеспечивать декомпозицию всех историй стразу, если менеджер не возражает.
+Вместо этого стоит приступать к декомпозиции, когда откладывать её уже нельзя, и в этот же момент мы обладаем гораздо большим пониманием требований и получающейся архитектуры.
+В том числе это даёт пространство для маневра в распределении работ.
+</p>
+
+</aside>
+
+</section>
+</section>
+<section>
+<section id="slide-org25d6238">
+<h2 id="org25d6238">Links</h2>
+<ul>
+<li>Эрих Фромм "Революция надежды" и все его книги.</li>
+
+<li>Фред Брукс "Мифический человекомесяц"</li>
+
+<li>Мери и Том Поппендик "Бережливое производство"</li>
+
+<li>Дейв Томас и Энди Хант "Программист прагматик"</li>
+
+<li>ДеМарко и Листер "Peopleware"</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org5e4432f">
+<h2 id="org5e4432f">Спасибо за внимание</h2>
+
+</section>
+</section>
+<section>
+<section id="slide-org96281a3">
+<h2 id="org96281a3"><b>Вопросы</b> и <b>дополнения</b></h2>
+<p>
+Прошу подсказать мне стратегии гуманистической декомпозиции из вашего опыта
+</p>
+</section>
+</section>
+</div>
+</div>
+<p> Created by Alexander Petrov (a.k.a Lysenko). </p>
+<script src="./reveal.js/lib/js/head.min.js"></script>
+<script src="./reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c/t',
+rollingLinks: true,
+keyboard: true,
+overview: true,
+width: 1200,
+height: 800,
+margin: 0.10,
+minScale: 0.50,
+maxScale: 2.50,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'cube', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: './reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>
