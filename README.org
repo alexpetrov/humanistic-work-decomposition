@@ -459,15 +459,27 @@ Senior *Ruby* / *Rails* / *Erlang* Developer at [[http://fun-box.ru/][FunBox]]
 
 * Книги
 
+#+ATTR_REVEAL: :frag roll-in
 - *Эрих Фромм* "Революция надежды" и все его книги
-
+#+ATTR_REVEAL: :frag roll-in
 - *Том ДеМарко* и *Тимоти Листер* "Человеческий фактор"
-
+#+ATTR_REVEAL: :frag roll-in
 - *Фред Брукс* "Мифический человеко-месяц" и другие его книги
-
+#+ATTR_REVEAL: :frag roll-in
 - *Мери и Том Поппендик* "Бережливое производство программного обеспечения"
-
+#+ATTR_REVEAL: :frag roll-in
 - *Дейв Томас* и *Энди Хант* "Программист прагматик"
+
+* Подкасты и доклады
+
+#+ATTR_REVEAL: :frag roll-in
+[[http://podlodka.io/132][Подлодка №132]] - *Олег Сорока* "Дисфункции Организаций"
+#+ATTR_REVEAL: :frag roll-in
+[[http://podlodka.io/126][Подлодка №126]] - *Артем Овечкин* "Осознанность"
+#+ATTR_REVEAL: :frag roll-in
+[[http://podlodka.io/98][Подлодка №98]] - *Алексей Пименов* "Kanban"
+#+ATTR_REVEAL: :frag roll-in
+[[https://youtu.be/VBwWbFpkltg][RailsConf 2019]] - *David Heinemeier Hansson* "Opening Keynote"
 
 * Благодарности
 
