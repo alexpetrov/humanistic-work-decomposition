@@ -1,3 +1,10 @@
 .reveal p {
     text-align: left;
 }
+
+.reveal img {
+  display: block;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 40%;
+}
