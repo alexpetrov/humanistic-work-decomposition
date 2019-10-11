@@ -17,18 +17,15 @@
 
 * Гуманистическая декомпозиция работы
 
-[[https://twitter.com/alexpetrov_rb][@alexpetrov_rb]]
-
-*Ruby Russia 2019*
-
-28 Сентября 2019
-
 #+ATTR_REVEAL: :frag roll-in
 *Эпиграф*
+#+ATTR_REVEAL: :frag roll-in
+[[https://otvet.imgsmail.ru/download/u_2113f30e6e170e387799c19feee831f2_800.gif]]
 #+ATTR_REVEAL: :frag roll-in
 "/Все мы немощны, ибо человецы суть/"
 #+ATTR_REVEAL: :frag roll-in
 *(c)* Отец Философ "/Неуловимые мстители/"
+
 
 * About me
 
