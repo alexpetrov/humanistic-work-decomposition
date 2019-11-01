@@ -486,7 +486,7 @@ Senior *Ruby* / *Rails* / *Erlang* Developer at [[http://fun-box.ru/][FunBox]]
 * Книги
 
 #+ATTR_REVEAL: :frag roll-in
-- *Эрих Фромм* "Революция надежды" и все его книги
+- *Эрих Фромм* все книги
 #+ATTR_REVEAL: :frag roll-in
 - *Том ДеМарко* и *Тимоти Листер* "Человеческий фактор"
 #+ATTR_REVEAL: :frag roll-in
