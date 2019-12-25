@@ -17,15 +17,6 @@
 
 * Гуманистическая декомпозиция работы
 
-#+ATTR_REVEAL: :frag roll-in
-[[https://otvet.imgsmail.ru/download/u_2113f30e6e170e387799c19feee831f2_800.gif]]
-#+ATTR_REVEAL: :frag roll-in
-#+ATTR_HTML: :style text-align:right
-/Все мы немощны, ибо человецы суть/
-#+ATTR_REVEAL: :frag roll-in
-#+ATTR_HTML: :style text-align:right
-*(c)* Отец Философ "/Неуловимые мстители/"
-
 * About me
 
 #+ATTR_REVEAL: :frag roll-in
